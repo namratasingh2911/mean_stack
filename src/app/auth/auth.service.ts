@@ -37,9 +37,10 @@ createUser(email:string,password:string){
     }
     
 this.http.post("http://localhost:3000/api/users/signup",authData)
-.subscribe((response)=>{
-    console.log(response)
-    this.router.navigate(['/']);
+.subscribe(()=>{
+    this.router.navigate(["/"])
+},error=>{
+    this.authStatusListner.next(false);
 })
 }
 
@@ -65,6 +66,8 @@ login(email:string,password:string){
             
         }
         
+    },error=>{
+        this.authStatusListner.next(false);
     })
 }
 
