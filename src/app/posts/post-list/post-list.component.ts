@@ -60,7 +60,9 @@ export class PostListComponent implements OnInit,OnDestroy {
             ()=>{
                 this.postsService.getPosts(this.postsPerPage,this.currentpage)
             }
-        );
+        ,()=>{
+            this.isLoading=false;
+        });
 
     }
     onChangedPage(pageData:PageEvent){

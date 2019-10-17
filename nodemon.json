@@ -1,0 +1,5 @@
+{
+    "env":{
+        "JWT_SIGN":"Secret this should be very strong"
+    }
+}
